@@ -1,12 +1,14 @@
 
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+//import App from "./App"
 
-//import App from './App.jsx'
+//import App from './App'
 
 
 
-/*function MyApp() {
+
+/*function Apps() {
     return (
         <div>
             <h1>Hi Rahul!!</h1>
@@ -18,7 +20,7 @@ import { createRoot } from 'react-dom/client'
     );
 
 }
-    */
+*/
 
 const anotheruser = "Rahul"
 
@@ -35,6 +37,7 @@ const anotheruser = "Rahul"
 */
 
 
+
 //creatiung by react
 const ReactElement  = React.createElement(
     'a',
@@ -47,6 +50,7 @@ const ReactElement  = React.createElement(
 )
 
 
+
 //create element joo he vo react element me convert ho jata he
 
 
@@ -55,11 +59,27 @@ const ReactElement  = React.createElement(
 )
     */
 
+
+
+
 createRoot(document.getElementById('root')).render(
   
-    
+   
+
     ReactElement
     
 
  
 )
+
+
+/*
+createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+)
+    */
+
+
+//create root is a function ,it takes dom odf an element and it will render it
