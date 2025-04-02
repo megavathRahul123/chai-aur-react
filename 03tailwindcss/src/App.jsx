@@ -1,11 +1,11 @@
 
-import { useState } from 'react'
+//import { useState } from 'react'
 import Card from './components/Card.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+ //const [count, setCount] = useState(0)
 
-  let myObj = {
+  /*let myObj = {
     name: 'Hitesh',
     age: 25,
     address: {
@@ -14,7 +14,9 @@ function App() {
       country: 'India'
     }
   }
+    */
   let newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  
 
   return (
     <>

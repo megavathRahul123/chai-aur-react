@@ -18,8 +18,8 @@ function App() {
     if(charAllowed) str += "!@#$%^&*()_+"
 
     for(let i = 1; i < length; i++) {
-      const char = Math.floor(Math.random() * str.length + 1)
-      pass += str.charAt(char)
+      const index = Math.floor(Math.random() * str.length + 1)//it will give a number in the string
+      pass += str.charAt(index)
     }
 
     setPassword(pass)
@@ -27,8 +27,15 @@ function App() {
   }, [length, numberAllowed, charAllowed])
 
   const copyPasswordToClipboard = () => {
-    window.navigator.clipboard.writeText(password)
+    window.navigator.clipboard.writeText(password)//window.navigator.clipboard is a kind of API that allows you to copy text to the clipboard
     passwordRef.current?.select()
+    /*passwordRef.current?.select();
+
+passwordRef is most likely a React useRef reference that points to an input field where the password is displayed.
+
+.current refers to the actual DOM element (the input field).
+
+?. (optional chaining) ensures that if passwordRef.current is null or undefined, the method .select() won't cause an error.*/
     
   }
 
@@ -66,7 +73,7 @@ function App() {
           className='cursor-pointer'
           onChange={(e) => setLength(e.target.value)}
           name="" 
-          id=""
+          id="length"
            />
            <label htmlFor="length">Length: {length}</label>
         </div>

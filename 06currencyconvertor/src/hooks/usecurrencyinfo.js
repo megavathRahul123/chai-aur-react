@@ -1,22 +1,22 @@
-
-//desiginig a custom hook to fetch the currency data from the api
 import { useEffect, useState } from "react";
 
-
-function useCurrencyInfo(currency){
-  
+function useCurrencyInfo(currency) {
     const [data, setData] = useState({});
+    
     useEffect(() => {
-      fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`)//sometimes it migth be string data ,so we have to cinvert it
-      .then((res) => res.json())
-      .then((res) => setData(res[currency]))
-    }, [currency])
+        // Replace YOUR_API_KEY with your actual API key from exchangerate-api.com
+        const apiKey = 'a4ff8f56aa974fa997d2d508';
+        fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/${currency}`)
+            .then((res) => res.json())
+            .then((res) => {
+                if (res.result === 'success') {
+                    setData(res.conversion_rates);
+                }
+            })
+            .catch((error) => console.error('Error fetching currency data:', error));
+    }, [currency]);
 
-    console.log(data);
-    return data
-    
-    
+    return data;
 }
-
 
 export default useCurrencyInfo;
